@@ -3730,6 +3730,7 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.camera.postproc@1.0-service-impl",
                 "libhwconfigurationutil",
                 "vendor.oplus.hardware.cameraextension-V1-service-impl",
+                "vendor.oplus.hardware.sendextcamcmd-V1-service-impl",
                 "libc",
                 "libm",
                 "libdl",
@@ -4726,6 +4727,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "vendor.oplus.hardware.cammidasservice-V1-ndk_platform",
+                "android.frameworks.stats@1.0",
                 "libbinder_ndk",
                 "libutils",
                 "libcutils",
@@ -5523,6 +5525,31 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/vendor.oplus.hardware.osense.client-V1-ndk_platform.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.sendextcamcmd-V1-ndk_platform",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.oplus.hardware.sendextcamcmd-V1-ndk_platform.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -6442,7 +6469,8 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libAlgoInterface.so",
             ],
             shared_libs: [
-                "libAlgoProcess",
+                "vendor.qti.hardware.camera.postproc@1.0",
+                "libqdMetaData",
                 "liblog",
                 "libcutils",
                 "libutils",
@@ -6451,8 +6479,7 @@ cc_prebuilt_library_shared {
                 "libEGL",
                 "libnativewindow",
                 "libhidlbase",
-                "libqdMetaData",
-                "vendor.qti.hardware.camera.postproc@1.0",
+                "libAlgoProcess",
                 "libc++",
                 "libc",
                 "libm",
@@ -6481,9 +6508,9 @@ cc_prebuilt_library_shared {
                 "android.hardware.graphics.common-V5-ndk",
                 "libgralloctypes",
                 "libqdMetaData",
-                "vendor.qti.hardware.camera.postproc@1.0",
                 "vendor.qti.hardware.display.mapper@4.0",
                 "libgralloc.qti",
+                "vendor.qti.hardware.camera.postproc@1.0",
                 "libosenseaidlhalclient",
                 "vendor.oplus.hardware.osense.client-V1-ndk_platform",
                 "libion",
@@ -6499,6 +6526,7 @@ cc_prebuilt_library_shared {
                 "libnativewindow",
                 "libhidlbase",
                 "libselinux",
+                "libexif-jpeg-aps",
                 "libc++",
                 "libc",
                 "libm",
@@ -6877,6 +6905,31 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libQnnHtpStub",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libQnnHtpStub.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcdsprpc",
+                "libm",
+                "libdl",
+                "libc",
             ],
         },
     },
@@ -7552,6 +7605,8 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libarcsoft_dualcam_refocus_left.so",
             ],
             shared_libs: [
+                "libarcsoft_qnnhtp",
+                "libcdsprpc",
                 "libmpbase",
                 "liblog",
                 "libc",
@@ -7577,7 +7632,6 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libarcsoft_dualcam_refocus_preview.so",
             ],
             shared_libs: [
-                "libcdsprpc",
                 "libmpbase",
                 "liblog",
                 "libc",
@@ -7603,6 +7657,8 @@ cc_prebuilt_library_shared {
                 "proprietary/odm/lib64/libarcsoft_dualcam_refocus_uw.so",
             ],
             shared_libs: [
+                "libarcsoft_qnnhtp",
+                "libcdsprpc",
                 "libmpbase",
                 "liblog",
                 "libc",
@@ -8360,6 +8416,30 @@ cc_prebuilt_library_shared {
                 "libmpbase",
                 "libOpenCL",
                 "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libexif-jpeg-aps",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libexif-jpeg-aps.so",
+            ],
+            shared_libs: [
+                "libc++",
                 "libc",
                 "libm",
                 "libdl",
@@ -9306,6 +9386,67 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.sendextcamcmd-V1-service-impl",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.oplus.hardware.sendextcamcmd-V1-service-impl.so",
+            ],
+            shared_libs: [
+                "libc++",
+                "libcutils",
+                "liblog",
+                "libofflinelog",
+                "libsync",
+                "android.hardware.graphics.allocator@3.0",
+                "android.hardware.graphics.common@1.1",
+                "android.hardware.graphics.mapper@3.0",
+                "android.hardware.graphics.mapper@2.0",
+                "android.hardware.graphics.mapper@2.1",
+                "libhardware",
+                "libhidlbase",
+                "libhidltransport",
+                "libqdMetaData",
+                "vendor.qti.hardware.display.allocator@3.0",
+                "vendor.qti.hardware.display.mapper@2.0",
+                "vendor.qti.hardware.display.mapper@3.0",
+                "libcamera_metadata",
+                "libutils",
+                "libqti_vndfwk_detect",
+                "vendor.qti.hardware.vpp@1.1",
+                "vendor.qti.hardware.vpp@1.2",
+                "android.hardware.graphics.allocator@4.0",
+                "android.hardware.graphics.mapper@4.0",
+                "libgralloc.qti",
+                "libgralloctypes",
+                "vendor.qti.hardware.display.allocator@4.0",
+                "vendor.qti.hardware.display.mapper@4.0",
+                "vendor.qti.hardware.display.mapperextensions@1.1",
+                "libbinder",
+                "vendor.oplus.hardware.osense.client-V1-ndk_platform",
+                "libosenseaidlhalclient",
+                "vendor.oplus.hardware.cammidasservice-V1-ndk_platform",
+                "libmidasserviceintf_aidl",
+                "libchilog",
+                "libbinder_ndk",
+                "libhwconfigurationutil",
+                "vendor.oplus.hardware.sendextcamcmd-V1-ndk_platform",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.esepowermanager@1.0",
     owner: "oneplus",
     strip: {
@@ -9435,46 +9576,10 @@ prebuilt_rfsa {
 }
 
 prebuilt_rfsa {
-    name: "libaiboost_skel",
-    filename: "libaiboost_skel.so",
-    owner: "oneplus",
-    src: "proprietary/odm/lib/rfsa/adsp/libaiboost_skel.so",
-    relative_install_path: "adsp",
-    device_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "libaiboost_skel_v65",
-    filename: "libaiboost_skel_v65.so",
-    owner: "oneplus",
-    src: "proprietary/odm/lib/rfsa/adsp/libaiboost_skel_v65.so",
-    relative_install_path: "adsp",
-    device_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "libaiboost_skel_v66",
-    filename: "libaiboost_skel_v66.so",
-    owner: "oneplus",
-    src: "proprietary/odm/lib/rfsa/adsp/libaiboost_skel_v66.so",
-    relative_install_path: "adsp",
-    device_specific: true,
-}
-
-prebuilt_rfsa {
     name: "libarc_gk_pt_hvx_skel",
     filename: "libarc_gk_pt_hvx_skel.so",
     owner: "oneplus",
     src: "proprietary/odm/lib/rfsa/adsp/libarc_gk_pt_hvx_skel.so",
-    relative_install_path: "adsp",
-    device_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "libarcsoft_dualcam_refocus_5111_skel",
-    filename: "libarcsoft_dualcam_refocus_5111_skel.so",
-    owner: "oneplus",
-    src: "proprietary/odm/lib/rfsa/adsp/libarcsoft_dualcam_refocus_5111_skel.so",
     relative_install_path: "adsp",
     device_specific: true,
 }
@@ -9520,24 +9625,6 @@ prebuilt_rfsa {
     filename: "libarcsoft_portraitsn_hvx_skel_20031.so",
     owner: "oneplus",
     src: "proprietary/odm/lib/rfsa/adsp/libarcsoft_portraitsn_hvx_skel_20031.so",
-    relative_install_path: "adsp",
-    device_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "libc++.so",
-    filename: "libc++.so.1",
-    owner: "oneplus",
-    src: "proprietary/odm/lib/rfsa/adsp/libc++.so.1",
-    relative_install_path: "adsp",
-    device_specific: true,
-}
-
-prebuilt_rfsa {
-    name: "libc++abi.so",
-    filename: "libc++abi.so.1",
-    owner: "oneplus",
-    src: "proprietary/odm/lib/rfsa/adsp/libc++abi.so.1",
     relative_install_path: "adsp",
     device_specific: true,
 }
