@@ -651,7 +651,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.primary.lahaina \
     libextcamera_client \
-    libgui1_vendor \
     vendor.oplus.hardware.extcamera@1.0 \
     com.qti.camx.chiiqutils \
     com.qti.eisv2 \
