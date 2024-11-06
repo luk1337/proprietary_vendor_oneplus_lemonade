@@ -5660,6 +5660,7 @@ cc_prebuilt_library_shared {
                 "libcdsprpc",
                 "libm",
                 "libc",
+                "libdl",
             ],
         },
     },
